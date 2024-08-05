@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class Snowman : MonoBehaviour
 {
-    public float jumpForce = 10;
+    private float m_jumpForce = 10;
+    public float jumpForce
+    {
+        get { return m_jumpForce; }
+        set { 
+            if (value < 0) { Debug.LogError("Can't be negative"); }
+            else m_jumpForce = value; 
+        }
+    }
+
     public bool isOnGround = true;
 
     public Rigidbody playerRb;
@@ -26,7 +35,7 @@ public class Snowman : MonoBehaviour
 
     public virtual void jump()
     {
-        playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        playerRb.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
         isOnGround = false;
     }
 
