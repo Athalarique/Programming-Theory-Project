@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snowman : MonoBehaviour
 {
     private float m_jumpForce = 10;
-    public float jumpForce
+    public float jumpForce // ENCAPSULATION
     {
         get { return m_jumpForce; }
         set { 
@@ -33,7 +33,7 @@ public class Snowman : MonoBehaviour
         }
     }
 
-    public virtual void jump()
+    public virtual void jump() // ABSTRACTION
     {
         playerRb.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
         isOnGround = false;

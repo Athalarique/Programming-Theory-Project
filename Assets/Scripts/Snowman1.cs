@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class Snowman1 : Snowman
+public class Snowman1 : Snowman // INHERITANCE
 {
     public SphereCollider playerSc;
     private bool isRotating = false;
@@ -36,6 +36,7 @@ public class Snowman1 : Snowman
             StartCoroutine(Jump());
         }
     }
+    // POLYMORPHISM
     //public override void jump()
     //{
     //    //playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -43,13 +44,13 @@ public class Snowman1 : Snowman
     //    playerSc.enabled = false;
     //    //Quaternion rotateJump = Quaternion.AngleAxis(180, Vector3.right);
     //    //transform.rotation = Quaternion.Slerp(transform.rotation, rotateJump, 0.05f);
-        
+
     //    isRotating = true;
     //    isOnGround = false;
 
     //}
 
-    IEnumerator Jump()
+    IEnumerator Jump() // POLYMORPHISM
     {
         isRotating = true;
         playerRb.useGravity = false;
